@@ -1,0 +1,10 @@
+stages:
+    - deploy
+    
+deploy:
+  stage: deploy
+  script:
+    - echo $CI_COMMIT_REF_NAME
+    - $shell_url "web-supervise-admin-watch" "$web_supervise_admin_watch"
+  only:
+    - custodyWatch
